@@ -6,13 +6,13 @@ and Hypriot RPI Docker http://blog.hypriot.com
 Quick instructions:
 
 1 - install Hypriot version of Linux on Raspberry PI
-2 - login via SSH and run the following 
+2 - login via SSH and run the following
 
 ```bash
-git clone https://github.com/dimetron/dockvpn-rpi.git
+git clone https://github.com/thulio/dockvpn-rpi.git
 docker build dockvpn-rpi
 docker run -d --privileged  --name vpn --restart=always -p 1194:1194/udp -p 443:443/tcp --dns=8.8.8.8 dockvpn-rpi /bin/sh -c run
-sudo docker run -t -i -p 8080:8080 --dns=8.8.8.8 --rm  --volumes-from vpn dockvpn-rpi serveconfig
+docker run -t -i -p 8080:8080 --dns=8.8.8.8 --rm  --volumes-from vpn dockvpn-rpi serveconfig
 ```
 
 Now download the file located at the indicated URL. You will get a
